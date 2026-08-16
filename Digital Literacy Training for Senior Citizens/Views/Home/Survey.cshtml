@@ -1,0 +1,342 @@
+﻿
+@{
+    ViewData["Title"] = "Digital Literacy Survey";
+}
+
+<section class="why-section">
+
+    <div class="section-heading">
+
+        <h1>📋 Digital Literacy Survey</h1>
+
+        <p>
+            Please answer these simple questions to help us understand
+            your experience with digital technology.
+        </p>
+
+    </div>
+
+
+    <div class="survey-container">
+
+        <!-- Question 1 -->
+
+        <div class="survey-question">
+
+            <h3>1. Do you use a smartphone?</h3>
+
+            <label>
+                <input type="radio" name="q1" value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="No">
+                No
+            </label>
+
+        </div>
+
+
+        <!-- Question 2 -->
+
+        <div class="survey-question">
+
+            <h3>2. How often do you use the internet?</h3>
+
+            <label>
+                <input type="radio" name="q2" value="Daily">
+                Daily
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="Sometimes">
+                Sometimes
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="Rarely">
+                Rarely
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="Never">
+                Never
+            </label>
+
+        </div>
+
+
+        <!-- Question 3 -->
+
+        <div class="survey-question">
+
+            <h3>3. Which digital activity do you use most?</h3>
+
+            <label>
+                <input type="radio" name="q3" value="Calling">
+                Calling
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="WhatsApp">
+                WhatsApp
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="Internet">
+                Internet Browsing
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="Payments">
+                Digital Payments
+            </label>
+
+        </div>
+
+
+        <!-- Question 4 -->
+
+        <div class="survey-question">
+
+            <h3>4. Have you ever used a digital payment service?</h3>
+
+            <label>
+                <input type="radio" name="q4" value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="No">
+                No
+            </label>
+
+        </div>
+
+
+        <!-- Question 5 -->
+
+        <div class="survey-question">
+
+            <h3>5. Do you know how to use a QR code for payment?</h3>
+
+            <label>
+                <input type="radio" name="q5" value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="No">
+                No
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="Little">
+                I know a little
+            </label>
+
+        </div>
+
+
+        <!-- Question 6 -->
+
+        <div class="survey-question">
+
+            <h3>6. Do you know that OTP and UPI PIN should be kept private?</h3>
+
+            <label>
+                <input type="radio" name="q6" value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="No">
+                No
+            </label>
+
+        </div>
+
+
+        <!-- Question 7 -->
+
+        <div class="survey-question">
+
+            <h3>7. What is your biggest difficulty while using technology?</h3>
+
+            <label>
+                <input type="radio" name="q7" value="Understanding">
+                Understanding new features
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="Safety">
+                Fear of online fraud
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="Physical">
+                Difficulty using the device
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="None">
+                No major difficulty
+            </label>
+
+        </div>
+
+
+        <!-- Question 8 -->
+
+        <div class="survey-question">
+
+            <h3>8. Would you like to receive digital literacy training?</h3>
+
+            <label>
+                <input type="radio" name="q8" value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="No">
+                No
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="Maybe">
+                Maybe
+            </label>
+
+        </div>
+
+
+        <!-- Question 9 -->
+
+        <div class="survey-question">
+
+            <h3>9. How confident are you when using digital services?</h3>
+
+            <label>
+                <input type="radio" name="q9" value="Very">
+                Very Confident
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="Somewhat">
+                Somewhat Confident
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="Not">
+                Not Confident
+            </label>
+
+        </div>
+
+
+        <!-- Question 10 -->
+
+        <div class="survey-question">
+
+            <h3>10. Do you think digital literacy improves daily life?</h3>
+
+            <label>
+                <input type="radio" name="q10" value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="No">
+                No
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="NotSure">
+                Not Sure
+            </label>
+
+        </div>
+
+
+        <!-- Submit -->
+
+        <div class="survey-submit">
+
+            <button type="button"
+                    class="btn btn-primary-custom"
+                    onclick="submitSurvey()">
+
+                Submit Survey
+
+            </button>
+
+        </div>
+
+
+        <!-- Thank You Message -->
+
+        <div id="surveyResult" class="survey-result">
+        </div>
+
+
+        <!-- Back to Home -->
+
+        <div class="survey-back">
+
+            <a href="@Url.Action("Index", "Home")"
+               class="btn btn-primary-custom">
+
+                ← Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    function submitSurvey() {
+
+        let answered = 0;
+
+        for (let i = 1; i <= 10; i++) {
+
+            let selected = document.querySelector(
+                'input[name="q' + i + '"]:checked'
+            );
+
+            if (selected) {
+                answered++;
+            }
+        }
+
+
+        let result = document.getElementById("surveyResult");
+
+
+        if (answered < 10) {
+
+            result.innerHTML =
+                "⚠️ Please answer all 10 questions before submitting the survey.";
+
+            result.className = "survey-result show";
+
+            return;
+        }
+
+
+        result.innerHTML =
+            "<h2>✅ Thank You!</h2>" +
+            "<p>Your survey has been submitted successfully.</p>" +
+            "<p>Your responses will help us understand digital literacy needs.</p>";
+
+        result.className = "survey-result show";
+
+    }
+
+</script>

@@ -1,0 +1,618 @@
+
+/* =========================================
+   DIGITAL LITERACY TRAINING
+   SENIOR CITIZEN PROJECT
+   ========================================= */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8ff;
+    color: #172033;
+    line-height: 1.5;
+}
+
+main {
+    min-height: 80vh;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.navbar {
+    background: #ffffff !important;
+    border-bottom: 2px solid #174ea6;
+    padding: 12px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 24px !important;
+    font-weight: 700;
+    color: #164e8c !important;
+}
+
+.nav-link {
+    font-size: 17px !important;
+    font-weight: 600;
+    color: #172033 !important;
+    margin-left: 12px;
+}
+
+    .nav-link:hover {
+        color: #174ea6 !important;
+    }
+
+
+/* =========================================
+   HOME HERO
+   ========================================= */
+
+.project-hero {
+    max-width: 1250px;
+    margin: 25px auto 15px;
+    padding: 18px 35px;
+    background: linear-gradient(90deg, #123b82, #174ea6);
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.hero-people {
+    font-size: 65px;
+    min-width: 160px;
+    text-align: center;
+}
+
+.hero-title {
+    text-align: center;
+    flex: 1;
+}
+
+    .hero-title h1 {
+        font-size: 38px;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .hero-title h2 {
+        font-size: 25px;
+        margin: 5px 0;
+    }
+
+.hero-laptop {
+    font-size: 70px;
+    min-width: 150px;
+    text-align: center;
+}
+
+
+/* =========================================
+   HOME OVERVIEW
+   ========================================= */
+
+.overview-grid {
+    max-width: 1250px;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1.25fr;
+    gap: 15px;
+}
+
+.info-box,
+.large-info-box,
+.how-section,
+.feature-small-box,
+.conclusion-box {
+    background: white;
+    border: 2px solid #3779d6;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.box-title {
+    background: linear-gradient(90deg, #123b82, #1761bb);
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.box-content {
+    padding: 15px 20px;
+    font-size: 17px;
+}
+
+    .box-content p {
+        margin: 5px 0;
+    }
+
+
+/* =========================================
+   TECHNOLOGIES
+   ========================================= */
+
+.technology-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    padding: 12px;
+}
+
+.technology-item {
+    min-height: 85px;
+    background: #f4f8ff;
+    border: 1px solid #d2def0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .technology-item strong {
+        color: #173e82;
+        font-size: 17px;
+    }
+
+    .technology-item span {
+        font-size: 13px;
+    }
+
+
+/* =========================================
+   HOME PROJECT GRID
+   ========================================= */
+
+.main-project-grid {
+    max-width: 1250px;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 15px;
+}
+
+.large-info-box {
+    padding-bottom: 15px;
+}
+
+.center-text {
+    text-align: center;
+    font-size: 17px;
+    margin: 12px;
+}
+
+
+/* =========================================
+   HOME PAGE BUTTONS
+   ========================================= */
+
+.page-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 5px 15px 15px;
+}
+
+    .page-buttons a {
+        text-decoration: none;
+        background: #e8f1ff;
+        border: 1px solid #6d9fe4;
+        color: #123b82;
+        padding: 7px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        position: relative;
+        z-index: 5;
+    }
+
+        .page-buttons a:hover {
+            background: #1761bb;
+            color: white;
+        }
+
+
+/* =========================================
+   HOME PREVIEW
+   ========================================= */
+
+.home-preview {
+    margin: 5px 15px 0;
+    padding: 25px;
+    min-height: 150px;
+    background: linear-gradient(135deg, #edf5ff, #ffffff);
+    border-radius: 15px;
+    border: 1px solid #c9daf1;
+}
+
+    .home-preview h2 {
+        color: #123b82;
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .home-preview p {
+        font-size: 17px;
+    }
+
+.home-start-btn {
+    display: inline-block;
+    background: #174ea6;
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 9px;
+    font-weight: 600;
+    position: relative;
+    z-index: 5;
+}
+
+    .home-start-btn:hover {
+        background: #0d3675;
+        color: white;
+    }
+
+
+/* =========================================
+   LEARNING MODULES - HOME
+   ========================================= */
+
+.module-mini {
+    margin: 10px 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    border: 1px solid #bcd4f5;
+    background: #f3f8ff;
+}
+
+.module-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    background: #e2efff;
+    border-radius: 12px;
+}
+
+.module-mini h3 {
+    margin: 0;
+    color: #123b82;
+    font-size: 20px;
+}
+
+.module-mini p {
+    margin: 3px 0 0;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   HOW PROJECT WORKS
+   ========================================= */
+
+.how-section {
+    max-width: 1250px;
+    margin: 15px auto;
+    padding-bottom: 20px;
+}
+
+.workflow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.workflow-box {
+    width: 230px;
+    min-height: 160px;
+    background: #f5f9ff;
+    border: 2px solid #8bb5eb;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+    font-size: 35px;
+}
+
+    .workflow-box h3 {
+        font-size: 21px;
+        color: #123b82;
+        margin: 5px 0;
+    }
+
+    .workflow-box p {
+        font-size: 14px;
+        margin: 2px;
+    }
+
+.arrow {
+    font-size: 45px;
+    font-weight: bold;
+    color: #174ea6;
+}
+
+
+/* =========================================
+   HOME FEATURES
+   ========================================= */
+
+.features-section {
+    max-width: 1250px;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.feature-small-box {
+    padding-bottom: 15px;
+}
+
+    .feature-small-box h2 {
+        margin: 0;
+        padding: 8px;
+        background: linear-gradient(90deg, #123b82, #1761bb);
+        color: white;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .feature-small-box p {
+        padding: 0 18px;
+        margin: 7px 0;
+        font-size: 16px;
+    }
+
+
+/* =========================================
+   CONCLUSION
+   ========================================= */
+
+.conclusion-box {
+    max-width: 900px;
+    margin: 20px auto 40px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+    .conclusion-box p {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+
+/* =========================================
+   COMMON BUTTON
+   ========================================= */
+
+.btn-primary-custom {
+    display: inline-block !important;
+    background: #1761bb !important;
+    color: white !important;
+    text-decoration: none !important;
+    padding: 12px 25px;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 20;
+}
+
+    .btn-primary-custom:hover {
+        background: #0d3675 !important;
+        color: white !important;
+    }
+
+
+/* =========================================
+   LEARN PAGE
+   ========================================= */
+
+.why-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+    .section-heading h1,
+    .section-heading h2 {
+        color: #123b82;
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .section-heading p {
+        font-size: 19px;
+        color: #374151;
+    }
+
+
+/* =========================================
+   LEARN FEATURE CARDS
+   ========================================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 2px solid #d2e1f5;
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+    .feature-card:hover {
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+    }
+
+.feature-icon {
+    font-size: 52px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 23px;
+    color: #164e8c;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 17px;
+    min-height: 80px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   LEARNING TIP
+   ========================================= */
+
+.about-section {
+    max-width: 900px;
+    margin: 50px auto 20px;
+    padding: 35px;
+    background: #ffffff;
+    border: 2px solid #d2e1f5;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+    .about-section h2 {
+        color: #123b82;
+        font-size: 30px;
+    }
+
+    .about-section p {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #123b82;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+        margin: 15px;
+    }
+
+    .main-project-grid {
+        grid-template-columns: 1fr;
+        margin: 15px;
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+        margin: 15px;
+    }
+
+    .project-hero {
+        margin: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .technology-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .workflow {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-title h1 {
+        font-size: 28px;
+    }
+
+    .hero-title h2 {
+        font-size: 20px;
+    }
+
+    .technology-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .module-mini {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h1,
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .why-section {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .about-section {
+        margin: 30px 15px;
+        padding: 25px 18px;
+    }
+}
+
