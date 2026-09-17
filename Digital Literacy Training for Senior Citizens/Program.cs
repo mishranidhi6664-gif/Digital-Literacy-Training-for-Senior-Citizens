@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Digital_Literacy_Training_for_Senior_Citizens.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add MVC services
 builder.Services.AddControllersWithViews();
+
+// Add PostgreSQL Database
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
 
 var app = builder.Build();
 
