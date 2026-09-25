@@ -3,31 +3,30 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Digital Literacy Training</title>
 
-    <title>
-        @ViewData["Title"] - Digital Literacy Training
-    </title>
-
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ0R0C8WBF"></script>
 
     <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
 
             gtag('js', new Date());
+
             gtag('config', 'G-PZ0R0C8WBF');
     </script>
 
-    <link rel="stylesheet"
-          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <link rel="stylesheet"
-          href="~/css/site.css"
-          asp-append-version="true" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 
 <body>
@@ -41,7 +40,6 @@
             <div class="container">
 
                 <!-- Website Name -->
-
                 <a class="navbar-brand"
                    asp-controller="Home"
                    asp-action="Index">
@@ -52,7 +50,6 @@
 
 
                 <!-- Mobile Menu Button -->
-
                 <button class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
@@ -66,22 +63,21 @@
                 </button>
 
 
-                <!-- Navigation Links -->
-
+                <!-- Navbar Links -->
                 <div class="collapse navbar-collapse"
                      id="mainNavbar">
 
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto flex-wrap">
+
 
                         <!-- Home -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="Index">
 
-                                Home
+                                🏠 Home
 
                             </a>
 
@@ -89,14 +85,13 @@
 
 
                         <!-- Learn -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="Learn">
 
-                                Learn
+                                📚 Learn
 
                             </a>
 
@@ -104,14 +99,13 @@
 
 
                         <!-- Tutorials -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="Tutorials">
 
-                                Tutorials
+                                💻 Tutorials
 
                             </a>
 
@@ -119,14 +113,13 @@
 
 
                         <!-- Quiz -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="Quiz">
 
-                                Quiz
+                                📝 Quiz
 
                             </a>
 
@@ -134,14 +127,13 @@
 
 
                         <!-- Survey -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="Survey">
 
-                                Survey
+                                📋 Survey
 
                             </a>
 
@@ -149,14 +141,13 @@
 
 
                         <!-- About -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="About">
 
-                                About
+                                ℹ️ About
 
                             </a>
 
@@ -164,48 +155,78 @@
 
 
                         <!-- Contact -->
-
                         <li class="nav-item">
 
                             <a class="nav-link"
                                asp-controller="Home"
                                asp-action="Contact">
 
-                                Contact
+                                📞 Contact
 
                             </a>
 
                         </li>
 
 
-                        <!-- Login -->
+                        <!-- ================= ACCOUNT ================= -->
+                        @if (User.Identity != null &&
+                                                                        User.Identity.IsAuthenticated)
+                        {
+                            <!-- Logged-in User Name -->
 
-                        <li class="nav-item">
+                            <li class="nav-item">
 
-                            <a class="nav-link"
-                               asp-controller="Account"
-                               asp-action="Login">
+                                <span class="nav-link">
 
-                                🔐 Login
+                                    👤 @User.Identity.Name
 
-                            </a>
+                                </span>
 
-                        </li>
+                            </li>
 
 
-                        <!-- Register -->
+                            <!-- Logout -->
 
-                        <li class="nav-item">
+                            <li class="nav-item">
 
-                            <a class="nav-link"
-                               asp-controller="Account"
-                               asp-action="Register">
+                                <a class="nav-link"
+                                   href="/Account/Logout">
 
-                                📝 Register
+                                    🚪 Logout
 
-                            </a>
+                                </a>
 
-                        </li>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Login -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   href="/Account/Login">
+
+                                    🔐 Login
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Register -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   href="/Account/Register">
+
+                                    📝 Register
+
+                                </a>
+
+                            </li>
+                        }
 
                     </ul>
 
@@ -234,12 +255,16 @@
         <div class="container">
 
             <p>
+
                 &copy; @DateTime.Now.Year -
                 Digital Literacy Training for Senior Citizens
+
             </p>
 
             <p>
+
                 Community Engagement Project
+
             </p>
 
         </div>
@@ -253,13 +278,9 @@
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="~/js/site.js"
-            asp-append-version="true">
-    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync(
-        "Scripts",
-        required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 

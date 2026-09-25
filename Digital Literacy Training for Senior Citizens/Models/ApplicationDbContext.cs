@@ -10,5 +10,7 @@ namespace Digital_Literacy_Training_for_Senior_Citizens.Models
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<SurveyResponse> SurveyResponses { get; set; }
     }
 }

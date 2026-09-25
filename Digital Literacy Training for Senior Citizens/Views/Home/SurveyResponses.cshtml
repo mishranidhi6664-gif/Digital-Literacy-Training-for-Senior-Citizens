@@ -1,0 +1,127 @@
+﻿@model List<Digital_Literacy_Training_for_Senior_Citizens.Models.SurveyResponse>
+
+@{
+    ViewData["Title"] = "Survey Responses";
+}
+
+<section class="why-section">
+
+    <div class="section-heading">
+
+        <h1>📊 Survey Responses</h1>
+
+        <p>
+            Responses submitted by users through the Digital Literacy Survey.
+        </p>
+
+    </div>
+
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered table-striped">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>User</th>
+
+                    <th>Q1</th>
+
+                    <th>Q2</th>
+
+                    <th>Q3</th>
+
+                    <th>Q4</th>
+
+                    <th>Q5</th>
+
+                    <th>Q6</th>
+
+                    <th>Q7</th>
+
+                    <th>Q8</th>
+
+                    <th>Q9</th>
+
+                    <th>Q10</th>
+
+                    <th>Submitted At</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var response in Model)
+                    {
+                        <tr>
+
+                            <td>@response.Id</td>
+
+                            <td>@response.UserEmail</td>
+
+                            <td>@response.Q1</td>
+
+                            <td>@response.Q2</td>
+
+                            <td>@response.Q3</td>
+
+                            <td>@response.Q4</td>
+
+                            <td>@response.Q5</td>
+
+                            <td>@response.Q6</td>
+
+                            <td>@response.Q7</td>
+
+                            <td>@response.Q8</td>
+
+                            <td>@response.Q9</td>
+
+                            <td>@response.Q10</td>
+
+                            <td>@response.SubmittedAt</td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="13" class="text-center">
+
+                            No survey responses found.
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="survey-back">
+
+        <a href="@Url.Action("Index", "Home")"
+           class="btn btn-primary-custom">
+
+            ← Back to Home
+
+        </a>
+
+    </div>
+
+</section>

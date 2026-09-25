@@ -11,5 +11,7 @@
         public string Password { get; set; }
 
         public DateTime? LastLogin { get; set; }
+
+        public bool IsAdmin { get; set; }
     }
 }
