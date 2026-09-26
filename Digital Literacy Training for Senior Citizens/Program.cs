@@ -4,16 +4,23 @@ using Digital_Literacy_Training_for_Senior_Citizens.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MVC services
 builder.Services.AddControllersWithViews();
 
-// Add PostgreSQL Database
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
+var connectionString =
+    builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Add Cookie Authentication
+if (!string.IsNullOrEmpty(connectionString) &&
+    connectionString.Contains("Host="))
+{
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseNpgsql(connectionString));
+}
+else
+{
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(connectionString));
+}
+
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
@@ -24,26 +31,29 @@ builder.Services.AddAuthentication(
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider
+        .GetRequiredService<ApplicationDbContext>();
+
+    db.Database.EnsureCreated();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection();
-
 app.UseStaticFiles();
 
 app.UseRouting();
 
-// Authentication
 app.UseAuthentication();
-
 app.UseAuthorization();
 
-// MVC Routing
 app.MapControllerRoute(
     name: "default",
-   pattern: "{controller=Account}/{action=Login}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
+
 app.Run();
